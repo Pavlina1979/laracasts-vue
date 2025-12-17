@@ -7,9 +7,9 @@ let buttonClasses = ref('text-green');
 let active = ref(false);
 
 const assignments = ref([
-  { id: 1, name: 'Finish project', complete: false },
-  { id: 2, name: 'Read chapter 13', complete: false },
-  { id: 3, name: 'Turn in homework', complete: false }
+  { id: 1, name: 'Finish project', complete: false, tag: 'science' },
+  { id: 2, name: 'Read chapter 13', complete: false, tag: 'math' },
+  { id: 3, name: 'Turn in homework', complete: false, tag: 'reading' }
 ]);
 
 function add(name) {
