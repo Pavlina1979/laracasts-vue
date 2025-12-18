@@ -6,15 +6,22 @@ import AssignmentCreate from './AssignmentCreate.vue';
 let buttonClasses = ref('text-green');
 let active = ref(false);
 
+const tagsArr = ['science', 'math', 'reading'];
+
+const randomTag = (tagsArr) => {
+  let i = Math.floor(Math.random() * tagsArr.length);
+  return tagsArr[i];
+}
+
 const assignments = ref([
-  { id: 1, name: 'Finish project', complete: false, tag: 'science' },
-  { id: 2, name: 'Read chapter 13', complete: false, tag: 'math' },
-  { id: 3, name: 'Turn in homework', complete: false, tag: 'reading' }
+  { id: 1, name: 'Finish project', complete: false, tag: randomTag(tagsArr) },
+  { id: 2, name: 'Read chapter 13', complete: false, tag: randomTag(tagsArr) },
+  { id: 3, name: 'Turn in homework', complete: false, tag: randomTag(tagsArr) }
 ]);
 
 function add(name) {
   assignments.value.push(
-    { id: assignments.value.length + 1, name: name, complete: false }
+    { id: assignments.value.length + 1, name: name, complete: false, tag: randomTag(tagsArr) }
   );
 }
 
